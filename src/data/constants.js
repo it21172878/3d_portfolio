@@ -404,9 +404,9 @@ export const education = [
     img: "https://th.bing.com/th/id/OIP.nQ0urwiqUa3WVEQ8fuuFQwHaHY?rs=1&pid=ImgDetMain",
     school: "Vocational Training Authority - Sri Lanka, Tangalle",
     date: "Jun 2019 - Dec 2019",
-    grade: "NVQ Level iv",
+    grade: "NVQ Level IV",
     desc: "I completed my NVQ certificate Information and Communication Technology Technician.",
-    degree: "National Vocational Qualification Level iv",
+    degree: "National Vocational Qualification Level IV",
   },
 ];
 
