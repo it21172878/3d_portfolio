@@ -8,7 +8,7 @@ import EducationCard from "../cards/EducationCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  /* justify-contnet: center; */
   position: rlative;
   z-index: 1;
   align-items: center;

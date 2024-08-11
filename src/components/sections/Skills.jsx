@@ -102,6 +102,20 @@ const SkillItem = styled.div`
   justify-content: center;
   gap: 8px;
 
+  &:hover {
+    color: #1f2634;
+    transform: scale(1.5);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 2px 4px #1f2634;
+    filter: brightness(1.05);
+    background: hsla(271, 100%, 50%, 1);
+    background: linear-gradient(
+      225deg,
+      hsla(271, 550%, 50%, 1) 0%,
+      hsla(294, 50%, 50%, 1) 100%
+    );
+  }
+
   @media (max-width: 768px) {
     font-size: 14px;
     padding: 8px 12px;
@@ -136,7 +150,7 @@ const Skills = () => {
               <Skill key={`skill-${index}`}>
                 <SkillTitle>{skill.title}</SkillTitle>
                 <SkillList>
-                  {skill.skills.map((item, index_x) => (
+                  {skill.skills?.map((item, index_x) => (
                     <SkillItem key={`skill-x-${index_x}`}>
                       <SkillImage src={item.image} />
                       {item.name}

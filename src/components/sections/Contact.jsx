@@ -47,7 +47,7 @@ const Desc = styled.div`
 `;
 
 const ContactForm = styled.div`
-  width: 80vh;
+  width: 95%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
@@ -180,45 +180,45 @@ const Contact = () => {
         >
           Feel free to reach out to me for any questions or opportunities!
         </Desc>
-        <form onSubmit={handelSubmit}>
-          <ContactForm>
-            <ContactTitle>Email Me 🚀</ContactTitle>
-            <ContactInput
-              type="text"
-              placeholder="Your Name"
-              name="name"
-              value={contactDetails.name}
-              onChange={handleChange}
-              required
-            />
-            <ContactInput
-              type="email"
-              placeholder="Your Email"
-              name="email"
-              value={contactDetails.email}
-              onChange={handleChange}
-              required
-            />
+        {/* <form onSubmit={handelSubmit}> */}
+        <ContactForm>
+          <ContactTitle>Email Me 🚀</ContactTitle>
+          <ContactInput
+            type="text"
+            placeholder="Your Name"
+            name="name"
+            value={contactDetails.name}
+            onChange={handleChange}
+            required
+          />
+          <ContactInput
+            type="email"
+            placeholder="Your Email"
+            name="email"
+            value={contactDetails.email}
+            onChange={handleChange}
+            required
+          />
 
-            <ContactInput
-              placeholder="Subject"
-              name="subject"
-              value={contactDetails.subject}
-              onChange={handleChange}
-              required
-            />
-            <ContactInputMessage
-              type="text"
-              placeholder="Message"
-              name="message"
-              value={contactDetails.message}
-              rows={4}
-              onChange={handleChange}
-              required
-            />
-            <ContactButton type="submit" value="Send" />
-          </ContactForm>
-        </form>
+          <ContactInput
+            placeholder="Subject"
+            name="subject"
+            value={contactDetails.subject}
+            onChange={handleChange}
+            required
+          />
+          <ContactInputMessage
+            type="text"
+            placeholder="Message"
+            name="message"
+            value={contactDetails.message}
+            rows={4}
+            onChange={handleChange}
+            required
+          />
+          <ContactButton onClick={handelSubmit} type="submit" value="Send" />
+        </ContactForm>
+        {/* </form> */}
       </Wrapper>
     </Container>
   );
