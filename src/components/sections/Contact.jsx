@@ -112,6 +112,12 @@ const ContactButton = styled.input`
   }
 `;
 
+const Sentence = styled.p`
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+`;
+
 const Contact = () => {
   const [contactDetails, setContactDetails] = useState({
     email: "",
@@ -119,6 +125,27 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!contactDetails.name.trim()) {
+      formErrors.name = "Name is required.";
+    }
+    if (!contactDetails.email.trim()) {
+      formErrors.email = "Email is required.";
+    }
+    if (!contactDetails.subject.trim()) {
+      formErrors.subject = "Subject is required.";
+    }
+    if (!contactDetails.message.trim()) {
+      formErrors.message = "Message is required.";
+    }
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -145,23 +172,25 @@ const Contact = () => {
         message: contactDetails.message,
       };
 
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
+      if (validateForm()) {
+        const response = await emailjs.send(
+          serviceId,
+          templateId,
+          templateParams,
+          publicKey
+        );
 
-      if (response.status === 200) {
-        toast.success("Email was successfully sent");
-        setContactDetails({
-          email: "",
-          name: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        toast.error("Email was not sent");
+        if (response.status === 200) {
+          toast.success("Email was successfully sent");
+          setContactDetails({
+            email: "",
+            name: "",
+            subject: "",
+            message: "",
+          });
+        } else {
+          toast.error("Email was not sent");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -189,8 +218,9 @@ const Contact = () => {
             name="name"
             value={contactDetails.name}
             onChange={handleChange}
-            required
+            required={true}
           />
+          {errors.name && <Sentence className="error">{errors.name}</Sentence>}
           <ContactInput
             type="email"
             placeholder="Your Email"
@@ -199,14 +229,20 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
-
+          {errors.email && (
+            <Sentence className="error">{errors.email}</Sentence>
+          )}
           <ContactInput
+            type="text"
             placeholder="Subject"
             name="subject"
             value={contactDetails.subject}
             onChange={handleChange}
             required
           />
+          {errors.subject && (
+            <Sentence className="error">{errors.subject}</Sentence>
+          )}
           <ContactInputMessage
             type="text"
             placeholder="Message"
@@ -216,6 +252,9 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
+          {errors.message && (
+            <Sentence className="error">{errors.message}</Sentence>
+          )}
           <ContactButton onClick={handelSubmit} type="submit" value="Send" />
         </ContactForm>
         {/* </form> */}
