@@ -6,7 +6,8 @@ import { Tilt } from "react-tilt";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  margin-top: 25px;
+  /* justify-contnet: center; */
   position: rlative;
   z-index: 1;
   align-items: center;
@@ -131,7 +132,7 @@ const Skills = () => {
 
         <SkillsContainer>
           {skills.map((skill, index) => (
-            <Tilt>
+            <Tilt key={index}>
               <Skill key={`skill-${index}`}>
                 <SkillTitle>{skill.title}</SkillTitle>
                 <SkillList>

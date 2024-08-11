@@ -4,12 +4,17 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter } from "react-router-dom";
 import Hero from "./components/sections/Hero";
 import Skills from "./components/sections/Skills";
+import Experience from "./components/sections/Experience";
+import Footer from "./components/sections/Footer";
+import Contact from "./components/sections/Contact";
+import Education from "./components/sections/Education";
+import Projects from "./components/sections/Projects";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text_primary};
   width: 100%;
-  height: 100vh;
+  /* height: 10; */
   overflow-x: hidden;
   position: relative;
 `;
@@ -36,8 +41,19 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Body>
-          <Hero />
-          <Skills />
+          <div>
+            <Hero />
+            <Wrapper>
+              <Skills />
+              <Experience />
+            </Wrapper>
+            <Projects />
+            <Wrapper>
+              <Education />
+              <Contact />
+            </Wrapper>
+            <Footer />
+          </div>
         </Body>
       </BrowserRouter>
     </ThemeProvider>

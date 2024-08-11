@@ -11,7 +11,6 @@ import {
   headContentAnimation,
   headTextAnimation,
 } from "./../../utils/motion";
-import StarCanvas from "../canvas/Stars";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -220,7 +219,6 @@ const Hero = () => {
     <div id="About">
       <HeroContainer>
         <HeroBg>
-          {/* <StarCanvas /> */}
           <HeroBgAnimation />
         </HeroBg>
 
@@ -249,14 +247,17 @@ const Hero = () => {
                 <SubTitle>{Bio.description}</SubTitle>
               </motion.div>
 
-              <ResumeButton href={Bio.resume} target="_blank">
+              <ResumeButton
+                href="/Resume of Dilanka.pdf"
+                download="Dilanka's Resume.pdf"
+              >
                 Check Resume
               </ResumeButton>
             </HeroLeftContainer>
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
                 <Tilt>
-                  <Img src={HeroImg} alt="Rishav Chanda" />
+                  <Img src={HeroImg} alt="Dilanka Liyanagama" />
                 </Tilt>
               </motion.div>
             </HeroRightContainer>
