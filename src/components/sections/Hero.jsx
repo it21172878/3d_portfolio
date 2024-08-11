@@ -220,7 +220,7 @@ const Hero = () => {
     <div id="About">
       <HeroContainer>
         <HeroBg>
-          <StarCanvas />
+          {/* <StarCanvas /> */}
           <HeroBgAnimation />
         </HeroBg>
 
