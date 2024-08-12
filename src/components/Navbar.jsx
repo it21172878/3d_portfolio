@@ -36,7 +36,8 @@ const NavItems = styled.ul`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
   gap: 32px;
   padding: 0 6px;
   list-style: none;
@@ -119,23 +120,84 @@ const MobileMenu = styled.ul`
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
 `;
+
+const ToggleButton = styled.div`
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover {
+    background: ${({ theme }) => theme.primary + 20};
+  }
+  @media (max-width: 768px) {
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+  ${({ active, theme }) =>
+    active &&
+    `
+  background:  ${theme.primary + 20};
+  `}
+`;
 const Navbar = () => {
+  const [toggle, setToggle] = useState("About");
   const [isopen, setIsOpen] = useState(false);
   const theme = useTheme();
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to="/">Dilanka</NavLogo>
+        <NavLogo>DILANKA</NavLogo>
         <MobileIcon onClick={() => setIsOpen(!isopen)}>
           <MenuRounded style={{ color: "inherit" }} />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
-          <NavLink href="#Contact">Contact</NavLink>
+          <NavLink href="#About">
+            <ToggleButton
+              active={toggle === "About"}
+              onClick={() => setToggle("About")}
+            >
+              About
+            </ToggleButton>
+          </NavLink>
+          <NavLink href="#Skills">
+            <ToggleButton
+              active={toggle === "Skills"}
+              onClick={() => setToggle("Skills")}
+            >
+              Skills
+            </ToggleButton>
+          </NavLink>
+          <NavLink href="#Experience">
+            <ToggleButton
+              active={toggle === "Experience"}
+              onClick={() => setToggle("Experience")}
+            >
+              Experience
+            </ToggleButton>
+          </NavLink>
+          <NavLink href="#Projects">
+            <ToggleButton
+              active={toggle === "Projects"}
+              onClick={() => setToggle("Projects")}
+            >
+              Projects
+            </ToggleButton>
+          </NavLink>
+          <NavLink href="#Education">
+            <ToggleButton
+              active={toggle === "Education"}
+              onClick={() => setToggle("Education")}
+            >
+              Education
+            </ToggleButton>
+          </NavLink>
+          <NavLink href="#Contact">
+            <ToggleButton
+              active={toggle === "Contact"}
+              onClick={() => setToggle("Contact")}
+            >
+              Contact
+            </ToggleButton>
+          </NavLink>
         </NavItems>
         {isopen && (
           <MobileMenu isOpen={isopen}>
