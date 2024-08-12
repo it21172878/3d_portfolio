@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { Element } from "react-scroll";
 
 const Container = styled.div`
   display: flex;
@@ -199,67 +200,70 @@ const Contact = () => {
   };
 
   return (
-    <Container id="Contact">
-      <Wrapper>
-        <Title>Contact</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          Feel free to reach out to me for any questions or opportunities!
-        </Desc>
-        {/* <form onSubmit={handelSubmit}> */}
-        <ContactForm>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput
-            type="text"
-            placeholder="Your Name"
-            name="name"
-            value={contactDetails.name}
-            onChange={handleChange}
-            required={true}
-          />
-          {errors.name && <Sentence className="error">{errors.name}</Sentence>}
-          <ContactInput
-            type="email"
-            placeholder="Your Email"
-            name="email"
-            value={contactDetails.email}
-            onChange={handleChange}
-            required
-          />
-          {errors.email && (
-            <Sentence className="error">{errors.email}</Sentence>
-          )}
-          <ContactInput
-            type="text"
-            placeholder="Subject"
-            name="subject"
-            value={contactDetails.subject}
-            onChange={handleChange}
-            required
-          />
-          {errors.subject && (
-            <Sentence className="error">{errors.subject}</Sentence>
-          )}
-          <ContactInputMessage
-            type="text"
-            placeholder="Message"
-            name="message"
-            value={contactDetails.message}
-            rows={4}
-            onChange={handleChange}
-            required
-          />
-          {errors.message && (
-            <Sentence className="error">{errors.message}</Sentence>
-          )}
-          <ContactButton onClick={handelSubmit} type="submit" value="Send" />
-        </ContactForm>
-        {/* </form> */}
-      </Wrapper>
-    </Container>
+    <Element name="Contact">
+      <Container id="Contact">
+        <Wrapper>
+          <Title>Contact</Title>
+          <Desc
+            style={{
+              marginBottom: "40px",
+            }}
+          >
+            Feel free to reach out to me for any questions or opportunities!
+          </Desc>
+
+          <ContactForm>
+            <ContactTitle>Email Me 🚀</ContactTitle>
+            <ContactInput
+              type="text"
+              placeholder="Your Name"
+              name="name"
+              value={contactDetails.name}
+              onChange={handleChange}
+              required={true}
+            />
+            {errors.name && (
+              <Sentence className="error">{errors.name}</Sentence>
+            )}
+            <ContactInput
+              type="email"
+              placeholder="Your Email"
+              name="email"
+              value={contactDetails.email}
+              onChange={handleChange}
+              required
+            />
+            {errors.email && (
+              <Sentence className="error">{errors.email}</Sentence>
+            )}
+            <ContactInput
+              type="text"
+              placeholder="Subject"
+              name="subject"
+              value={contactDetails.subject}
+              onChange={handleChange}
+              required
+            />
+            {errors.subject && (
+              <Sentence className="error">{errors.subject}</Sentence>
+            )}
+            <ContactInputMessage
+              type="text"
+              placeholder="Message"
+              name="message"
+              value={contactDetails.message}
+              rows={4}
+              onChange={handleChange}
+              required
+            />
+            {errors.message && (
+              <Sentence className="error">{errors.message}</Sentence>
+            )}
+            <ContactButton onClick={handelSubmit} type="submit" value="Send" />
+          </ContactForm>
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 

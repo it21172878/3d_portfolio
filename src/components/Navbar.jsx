@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link as LinkR } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 import { Bio } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
+import { Link as Scroll } from "react-scroll";
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -26,7 +27,7 @@ const NavbarContainer = styled.div`
   justify-content: space-between;
   font-size: 1rem;
 `;
-const NavLogo = styled(LinkR)`
+const NavLogo = styled.div`
   width: 80%;
   padding: 0 6px;
   text-decoration: none;
@@ -45,7 +46,7 @@ const NavItems = styled.ul`
     display: none;
   }
 `;
-const NavLink = styled.a`
+const NavLink = styled(Scroll)`
   color: ${({ theme }) => theme.text_primary};
   font-weight: 500;
   cursor: pointer;
@@ -125,6 +126,11 @@ const ToggleButton = styled.div`
   padding: 8px 18px;
   border-radius: 6px;
   cursor: pointer;
+  &.active {
+    font-weight: bold;
+    color: blue;
+    border-bottom: 20px solid blue;
+  }
   &:hover {
     background: ${({ theme }) => theme.primary + 20};
   }
@@ -138,10 +144,16 @@ const ToggleButton = styled.div`
   background:  ${theme.primary + 20};
   `}
 `;
+
 const Navbar = () => {
-  const [toggle, setToggle] = useState("About");
+  const [toggle, setToggle] = useState("");
   const [isopen, setIsOpen] = useState(false);
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const handleSetActive = (to) => {
+    navigate(`/${to}`);
+  };
   return (
     <Nav>
       <NavbarContainer>
@@ -150,7 +162,14 @@ const Navbar = () => {
           <MenuRounded style={{ color: "inherit" }} />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#About">
+          <NavLink
+            activeClass="active"
+            to="About"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <ToggleButton
               active={toggle === "About"}
               onClick={() => setToggle("About")}
@@ -158,7 +177,24 @@ const Navbar = () => {
               About
             </ToggleButton>
           </NavLink>
-          <NavLink href="#Skills">
+
+          {/* <NavLink href="#About">
+            <ToggleButton
+              active={toggle === "About"}
+              onClick={() => setToggle("About")}
+            >
+              About
+            </ToggleButton>
+          </NavLink> */}
+
+          <NavLink
+            activeClass="active"
+            to="Skills"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <ToggleButton
               active={toggle === "Skills"}
               onClick={() => setToggle("Skills")}
@@ -166,7 +202,14 @@ const Navbar = () => {
               Skills
             </ToggleButton>
           </NavLink>
-          <NavLink href="#Experience">
+          <NavLink
+            activeClass="active"
+            to="Experience"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <ToggleButton
               active={toggle === "Experience"}
               onClick={() => setToggle("Experience")}
@@ -174,7 +217,14 @@ const Navbar = () => {
               Experience
             </ToggleButton>
           </NavLink>
-          <NavLink href="#Projects">
+          <NavLink
+            activeClass="active"
+            to="Projects"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <ToggleButton
               active={toggle === "Projects"}
               onClick={() => setToggle("Projects")}
@@ -182,7 +232,14 @@ const Navbar = () => {
               Projects
             </ToggleButton>
           </NavLink>
-          <NavLink href="#Education">
+          <NavLink
+            activeClass="active"
+            to="Education"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <ToggleButton
               active={toggle === "Education"}
               onClick={() => setToggle("Education")}
@@ -190,7 +247,14 @@ const Navbar = () => {
               Education
             </ToggleButton>
           </NavLink>
-          <NavLink href="#Contact">
+          <NavLink
+            activeClass="active"
+            to="Contact"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
             <ToggleButton
               active={toggle === "Contact"}
               onClick={() => setToggle("Contact")}

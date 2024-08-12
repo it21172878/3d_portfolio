@@ -4,6 +4,7 @@ import "react-vertical-timeline-component/style.min.css";
 import styled from "styled-components";
 import { experiences } from "../../data/constants";
 import ExperienceCard from "../cards/ExperienceCard";
+import { Element } from "react-scroll";
 
 const Container = styled.div`
   display: flex;
@@ -51,28 +52,30 @@ const Desc = styled.div`
 
 const Experience = () => {
   return (
-    <Container id="Experience">
-      <Wrapper>
-        <Title>Experience</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          My work experience as a software engineer and working on different
-          companies and projects.
-        </Desc>
+    <Element name="Experience">
+      <Container id="Experience">
+        <Wrapper>
+          <Title>Experience</Title>
+          <Desc
+            style={{
+              marginBottom: "40px",
+            }}
+          >
+            My work experience as a software engineer and working on different
+            companies and projects.
+          </Desc>
 
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
-      </Wrapper>
-    </Container>
+          <VerticalTimeline>
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={`experience-${index}`}
+                experience={experience}
+              />
+            ))}
+          </VerticalTimeline>
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 

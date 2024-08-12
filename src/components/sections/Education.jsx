@@ -4,6 +4,7 @@ import "react-vertical-timeline-component/style.min.css";
 import styled from "styled-components";
 import { education } from "../../data/constants";
 import EducationCard from "../cards/EducationCard";
+import { Element } from "react-scroll";
 
 const Container = styled.div`
   display: flex;
@@ -50,26 +51,28 @@ const Desc = styled.div`
 
 const Education = () => {
   return (
-    <Container id="Education">
-      <Wrapper>
-        <Title>Education</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          My education has been a journey of self-discovery and growth. My
-          educational details are as follows.
-        </Desc>
+    <Element name="Education">
+      <Container id="Education">
+        <Wrapper>
+          <Title>Education</Title>
+          <Desc
+            style={{
+              marginBottom: "40px",
+            }}
+          >
+            My education has been a journey of self-discovery and growth. My
+            educational details are as follows.
+          </Desc>
 
-        <VerticalTimeline>
-          {education.map((education, index) => (
-            <EducationCard key={`education-${index}`} education={education} />
-          ))}
-        </VerticalTimeline>
-        {/* <EarthCanvas /> */}
-      </Wrapper>
-    </Container>
+          <VerticalTimeline>
+            {education.map((education, index) => (
+              <EducationCard key={`education-${index}`} education={education} />
+            ))}
+          </VerticalTimeline>
+          {/* <EarthCanvas /> */}
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 

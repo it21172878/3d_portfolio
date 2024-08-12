@@ -11,6 +11,7 @@ import {
   headContentAnimation,
   headTextAnimation,
 } from "./../../utils/motion";
+import { Element } from "react-scroll";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -216,55 +217,57 @@ const HeroBg = styled.div`
 
 const Hero = () => {
   return (
-    <div id="About">
-      <HeroContainer>
-        <HeroBg>
-          <HeroBgAnimation />
-        </HeroBg>
+    <Element name="About">
+      <div id="About">
+        <HeroContainer>
+          <HeroBg>
+            <HeroBgAnimation />
+          </HeroBg>
 
-        <motion.div {...headContainerAnimation}>
-          <HeroInnerContainer>
-            <HeroLeftContainer>
-              <motion.div {...headTextAnimation}>
-                <Title>
-                  Hi, I am <br /> {Bio.name}
-                </Title>
-                <TextLoop>
-                  I am a
-                  <Span>
-                    <Typewriter
-                      options={{
-                        strings: Bio.roles,
-                        autoStart: true,
-                        loop: true,
-                      }}
-                    />
-                  </Span>
-                </TextLoop>
-              </motion.div>
+          <motion.div {...headContainerAnimation}>
+            <HeroInnerContainer>
+              <HeroLeftContainer>
+                <motion.div {...headTextAnimation}>
+                  <Title>
+                    Hi, I am <br /> {Bio.name}
+                  </Title>
+                  <TextLoop>
+                    I am a
+                    <Span>
+                      <Typewriter
+                        options={{
+                          strings: Bio.roles,
+                          autoStart: true,
+                          loop: true,
+                        }}
+                      />
+                    </Span>
+                  </TextLoop>
+                </motion.div>
 
-              <motion.div {...headContentAnimation}>
-                <SubTitle>{Bio.description}</SubTitle>
-              </motion.div>
+                <motion.div {...headContentAnimation}>
+                  <SubTitle>{Bio.description}</SubTitle>
+                </motion.div>
 
-              <ResumeButton
-                href="/Resume of Dilanka.pdf"
-                download="Dilanka's Resume.pdf"
-              >
-                Check Resume
-              </ResumeButton>
-            </HeroLeftContainer>
-            <HeroRightContainer>
-              <motion.div {...headContentAnimation}>
-                <Tilt>
-                  <Img src={HeroImg} alt="Dilanka Liyanagama" />
-                </Tilt>
-              </motion.div>
-            </HeroRightContainer>
-          </HeroInnerContainer>
-        </motion.div>
-      </HeroContainer>
-    </div>
+                <ResumeButton
+                  href="/Resume of Dilanka.pdf"
+                  download="Dilanka's Resume.pdf"
+                >
+                  Check Resume
+                </ResumeButton>
+              </HeroLeftContainer>
+              <HeroRightContainer>
+                <motion.div {...headContentAnimation}>
+                  <Tilt>
+                    <Img src={HeroImg} alt="Dilanka Liyanagama" />
+                  </Tilt>
+                </motion.div>
+              </HeroRightContainer>
+            </HeroInnerContainer>
+          </motion.div>
+        </HeroContainer>
+      </div>
+    </Element>
   );
 };
 

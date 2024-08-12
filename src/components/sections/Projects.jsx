@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { projects } from "../../data/constants";
 import ProjectCard from "../cards/ProjectCard";
+import { Element } from "react-scroll";
 
 const Container = styled.div`
   display: flex;
@@ -93,61 +94,63 @@ const CardContainer = styled.div`
 const Projects = () => {
   const [toggle, setToggle] = useState("all");
   return (
-    <Container id="Projects">
-      <Wrapper>
-        <Title>Projects</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          I have worked on a wide range of projects. From web apps to android
-          apps. Here are some of my projects.
-        </Desc>
+    <Element name="Projects">
+      <Container id="Projects">
+        <Wrapper>
+          <Title>Projects</Title>
+          <Desc
+            style={{
+              marginBottom: "40px",
+            }}
+          >
+            I have worked on a wide range of projects. From web apps to android
+            apps. Here are some of my projects.
+          </Desc>
 
-        <ToggleButtonGroup>
-          <ToggleButton
-            active={toggle === "all"}
-            onClick={() => setToggle("all")}
-          >
-            ALL
-          </ToggleButton>
-          <Divider />
-          <ToggleButton
-            active={toggle === "web app"}
-            onClick={() => setToggle("web app")}
-          >
-            WEB APP'S
-          </ToggleButton>
-          <Divider />
-          <ToggleButton
-            active={toggle === "android app"}
-            onClick={() => setToggle("android app")}
-          >
-            ANDROID APP'S
-          </ToggleButton>
-          {/* <Divider />
+          <ToggleButtonGroup>
+            <ToggleButton
+              active={toggle === "all"}
+              onClick={() => setToggle("all")}
+            >
+              ALL
+            </ToggleButton>
+            <Divider />
+            <ToggleButton
+              active={toggle === "web app"}
+              onClick={() => setToggle("web app")}
+            >
+              WEB APP'S
+            </ToggleButton>
+            <Divider />
+            <ToggleButton
+              active={toggle === "android app"}
+              onClick={() => setToggle("android app")}
+            >
+              ANDROID APP'S
+            </ToggleButton>
+            {/* <Divider />
           <ToggleButton
             active={toggle === "machine learning"}
             onClick={() => setToggle("machine learning")}
           >
             MACHINE LEARNING
           </ToggleButton> */}
-        </ToggleButtonGroup>
+          </ToggleButtonGroup>
 
-        <CardContainer>
-          {toggle === "all" &&
-            projects?.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          {projects
-            .filter((item) => item.category === toggle)
-            .map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-        </CardContainer>
-      </Wrapper>
-    </Container>
+          <CardContainer>
+            {toggle === "all" &&
+              projects?.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            {projects
+              .filter((item) => item.category === toggle)
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+          </CardContainer>
+        </Wrapper>
+      </Container>
+    </Element>
   );
 };
 
