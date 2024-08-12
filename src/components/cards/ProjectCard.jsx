@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import WifiIcon from "@mui/icons-material/Wifi";
+import WifiOffIcon from "@mui/icons-material/WifiOff";
 
 const Card = styled.div`
   width: 330px;
@@ -72,7 +74,7 @@ const Description = styled.div`
   max-width: 100%;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
 `;
 const Members = styled.div`
   display: flex;
@@ -91,28 +93,89 @@ const Avatar = styled.img`
 const Button = styled.a`
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 500;
+  text-align: end;
+`;
+
+const TagItem = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_primary + 80};
+  border: 1px solid ${({ theme }) => theme.text_primary + 80};
+  border-radius: 12px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  &:hover {
+    color: 1px solid ${({ theme }) => theme.text_primary + 10};
+    transform: scale(1.2);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 2px 4px #1f2634;
+    filter: brightness(1.05);
+    background: hsla(271, 100%, 50%, 1);
+    background: linear-gradient(
+      225deg,
+      hsla(271, 5%, 5%, 1) 0%,
+      hsla(294, 50%, 50%, 1) 100%
+    );
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+`;
+
+const Buttons = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
 `;
 
 const ProjectCard = ({ project }) => {
   return (
     <Card>
       <Image src={project.image} />
-      <Tags></Tags>
+      <Tags>
+        {project?.tags.map((tag) => (
+          <TagItem key={project.id}>{tag}</TagItem>
+        ))}
+      </Tags>
       <Details>
         <Title>{project.title}</Title>
         <Date>{project.date}</Date>
         <Description>{project.description}</Description>
       </Details>
-      <Members>
+      {/* <Members>
         {project.member?.map((member, index) => (
           <Avatar key={index} src={member.img} />
         ))}
-      </Members>
-      <Button href={project.github} target="_blank">
-        View Code
-      </Button>
+      </Members> */}
+      <Buttons>
+        <Button href={project.github} target="_blank">
+          Git Repo
+        </Button>
+        <Button href={project.live} target="_blank">
+          {/* <Members> */}
+          {project.live ? (
+            <WifiIcon style={{ color: "green" }} />
+          ) : (
+            <WifiOffIcon style={{ color: "red" }} />
+          )}
+          {/* </Members> */}
+        </Button>
+      </Buttons>
     </Card>
   );
 };
