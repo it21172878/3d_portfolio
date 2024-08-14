@@ -10,9 +10,11 @@ const Container = styled.div`
   /* justify-contnet: center; */
   margin-top: 50px;
   padding: 0px 16px;
-  position: rlative;
+  position: relative;
   z-index: 1;
   align-items: center;
+  margin-top: -80px;
+  padding-top: 80px;
 `;
 
 const Wrapper = styled.div`

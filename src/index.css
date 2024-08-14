@@ -54,3 +54,7 @@ body {
 ::-webkit-backdrop-filter {
   blur: 30px saturate(106%);
 }
+
+html {
+  scroll-behavior: smooth;
+}

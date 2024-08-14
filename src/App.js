@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter } from "react-router-dom";
 import Hero from "./components/sections/Hero";
 import Skills from "./components/sections/Skills";
-import Experience from "./components/sections/Experience";
 import Footer from "./components/sections/Footer";
 import Contact from "./components/sections/Contact";
 import Education from "./components/sections/Education";
@@ -14,7 +13,6 @@ const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text_primary};
   width: 100%;
-  /* height: 10; */
   overflow-x: hidden;
   position: relative;
 `;
@@ -45,11 +43,13 @@ function App() {
             <Hero />
             <Wrapper>
               <Skills />
-              <Experience />
+              {/* <Experience /> */}
             </Wrapper>
             <Projects />
             <Wrapper>
-              <Education />
+              <div>
+                <Education />
+              </div>
               <Contact />
             </Wrapper>
             <Footer />

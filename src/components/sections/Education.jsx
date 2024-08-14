@@ -9,10 +9,12 @@ import { Element } from "react-scroll";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-contnet: center; */
-  position: rlative;
+  justify-contnet: center;
+  position: relative;
   z-index: 1;
   align-items: center;
+  margin-top: -80px;
+  padding-top: 80px;
 `;
 
 const Wrapper = styled.div`
@@ -24,6 +26,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1100px;
   gap: 12px;
+  scroll-margin-top: 52rem;
   @media (max-width: 960px) {
     flex-direction: column;
   }

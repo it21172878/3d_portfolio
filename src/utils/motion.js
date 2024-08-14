@@ -1,4 +1,10 @@
-export const transition = { type: "spring", duration: 0.8 };
+// export const transition = { type: "spring", duration: 0.8 };
+export const transition = {
+  type: "spring",
+  duration: 0.8,
+  stiffness: 380,
+  damping: 300,
+};
 
 export const slideAnimation = (direction) => {
   return {

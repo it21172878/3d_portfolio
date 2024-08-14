@@ -126,6 +126,7 @@ const ToggleButton = styled.div`
   padding: 8px 18px;
   border-radius: 6px;
   cursor: pointer;
+
   &.active {
     font-weight: bold;
     color: blue;
@@ -161,6 +162,7 @@ const Navbar = () => {
         <MobileIcon onClick={() => setIsOpen(!isopen)}>
           <MenuRounded style={{ color: "inherit" }} />
         </MobileIcon>
+
         <NavItems>
           <NavLink
             activeClass="active"
@@ -202,7 +204,7 @@ const Navbar = () => {
               Skills
             </ToggleButton>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             activeClass="active"
             to="Experience"
             spy={true}
@@ -216,7 +218,7 @@ const Navbar = () => {
             >
               Experience
             </ToggleButton>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             activeClass="active"
             to="Projects"
@@ -263,24 +265,25 @@ const Navbar = () => {
             </ToggleButton>
           </NavLink>
         </NavItems>
+
         {isopen && (
           <MobileMenu isOpen={isopen}>
-            <NavLink onClick={() => setIsOpen(!isopen)} href="#About">
+            <NavLink onClick={() => setIsOpen(!isopen)} to="About">
               About
             </NavLink>
-            <NavLink onClick={() => setIsOpen(!isopen)} href="#Skills">
+            <NavLink onClick={() => setIsOpen(!isopen)} to="Skills">
               Skills
             </NavLink>
-            <NavLink onClick={() => setIsOpen(!isopen)} href="#Experience">
+            {/* <NavLink onClick={() => setIsOpen(!isopen)} to="Experience">
               Experience
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isopen)} href="#Projects">
+            </NavLink> */}
+            <NavLink onClick={() => setIsOpen(!isopen)} to="Projects">
               Projects
             </NavLink>
-            <NavLink onClick={() => setIsOpen(!isopen)} href="#Education">
+            <NavLink onClick={() => setIsOpen(!isopen)} to="Education">
               Education
             </NavLink>
-            <NavLink onClick={() => setIsOpen(!isopen)} href="#Contact">
+            <NavLink onClick={() => setIsOpen(!isopen)} to="Contact">
               Contact
             </NavLink>
             <GithubButton

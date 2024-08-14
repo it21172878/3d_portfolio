@@ -7,11 +7,13 @@ import { Element } from "react-scroll";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
-  /* justify-contnet: center; */
-  position: rlative;
+  /* margin-top: 25px; */
+  position: relative;
+  margin-top: -80px;
+  padding-top: 80px;
   z-index: 1;
   align-items: center;
+  /* justify-contnet: center; */
 `;
 
 const Wrapper = styled.div`
@@ -133,7 +135,7 @@ const SkillImage = styled.img`
 
 const Skills = () => {
   return (
-    <Element name="Skills">
+    <Element name="Skills" style={{ scrollMarginBottom: "25px" }}>
       <Container id="Skills">
         <Wrapper>
           <Title>Skills</Title>

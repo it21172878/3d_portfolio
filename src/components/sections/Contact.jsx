@@ -8,7 +8,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-contnet: center; */
-  position: rlative;
+  margin-top: -80px;
+  padding-top: 80px;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
