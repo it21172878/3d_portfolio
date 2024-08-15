@@ -91,7 +91,7 @@ const Title = styled.div`
 
   @media (max-width: 960px) {
     font-size: 32px;
-    line-height: 48px;
+    line-height: 40px;
     margin-bottom: 8px;
   }
 `;
@@ -109,7 +109,7 @@ const TextLoop = styled.div`
   }
 
   @media (max-width: 960px) {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 48px;
     margin-bottom: 16px;
     text-align: center;
@@ -130,6 +130,7 @@ const SubTitle = styled.div`
 
   @media (max-width: 960px) {
     text-align: center;
+    margin-top: 60px;
   }
 
   @media (max-width: 960px) {
@@ -222,11 +223,24 @@ const HeroBg = styled.div`
     padding: 0 0px;
   }
 `;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* justify-contnet: center; */
+  margin-top: 50px;
+  padding: 0px 16px;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  margin-top: -80px;
+  padding-top: 80px;
+`;
 
 const Hero = () => {
   return (
     <Element name="About">
-      <div id="About">
+      {/* <div id="About"> */}
+      <Container id="Projects">
         <HeroContainer>
           <HeroBg>
             <HeroBgAnimation />
@@ -274,7 +288,7 @@ const Hero = () => {
             </HeroInnerContainer>
           </motion.div>
         </HeroContainer>
-      </div>
+      </Container>
     </Element>
   );
 };
