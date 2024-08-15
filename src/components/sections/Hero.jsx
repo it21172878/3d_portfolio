@@ -69,7 +69,7 @@ const HeroRightContainer = styled.div`
     align-items: center;
     justify-contents: center;
     margin-bottom: 80px;
-    width: 75%;
+    width: 95%;
     margin-top: -90px;
     padding-top: 80px;
   }
@@ -240,7 +240,7 @@ const Hero = () => {
   return (
     <Element name="About">
       {/* <div id="About"> */}
-      <Container id="Projects">
+      <Container id="About">
         <HeroContainer>
           <HeroBg>
             <HeroBgAnimation />
@@ -251,7 +251,7 @@ const Hero = () => {
               <HeroLeftContainer>
                 <motion.div {...headTextAnimation}>
                   <Title>
-                    Hi, I am <br /> {Bio.name}
+                    Hi, I'm <br /> {Bio.name}
                   </Title>
                   <TextLoop>
                     I am a
