@@ -118,8 +118,13 @@ const TextLoop = styled.div`
 `;
 
 const Span = styled.div`
+  margin-left: 10px;
   cursor: pointer;
   color: ${({ theme }) => theme.primary};
+  @media (max-width: 960px) {
+    text-align: center;
+    margin-top: -30px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -134,6 +139,27 @@ const SubTitle = styled.div`
   }
 
   @media (max-width: 960px) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+`;
+const Texts = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+`;
+
+const SubText = styled.div`
+  font-size: 32px;
+  @media (max-width: 960px) {
+    /* order: 2; */
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 32px;
   }
@@ -253,18 +279,20 @@ const Hero = () => {
                   <Title>
                     Hi, I'm <br /> {Bio.name}
                   </Title>
-                  <TextLoop>
-                    I am a
-                    <Span>
-                      <Typewriter
-                        options={{
-                          strings: Bio.roles,
-                          autoStart: true,
-                          loop: true,
-                        }}
-                      />
-                    </Span>
-                  </TextLoop>
+                  <Texts>
+                    <SubText>I am a</SubText>
+                    <TextLoop>
+                      <Span>
+                        <Typewriter
+                          options={{
+                            strings: Bio.roles,
+                            autoStart: true,
+                            loop: true,
+                          }}
+                        />
+                      </Span>
+                    </TextLoop>
+                  </Texts>
                 </motion.div>
 
                 <motion.div {...headContentAnimation}>
