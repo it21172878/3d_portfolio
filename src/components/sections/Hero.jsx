@@ -69,7 +69,7 @@ const HeroRightContainer = styled.div`
     align-items: center;
     justify-contents: center;
     margin-bottom: 80px;
-    width: 95%;
+    width: 100%;
     margin-top: -90px;
     padding-top: 80px;
   }
@@ -109,7 +109,7 @@ const TextLoop = styled.div`
   }
 
   @media (max-width: 960px) {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 48px;
     margin-bottom: 16px;
     text-align: center;
@@ -130,7 +130,7 @@ const SubTitle = styled.div`
 
   @media (max-width: 960px) {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 30px;
   }
 
   @media (max-width: 960px) {
