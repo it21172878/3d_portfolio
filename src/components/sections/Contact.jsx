@@ -3,6 +3,7 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { Element } from "react-scroll";
+import { MdOutlineWarningAmber } from "react-icons/md";
 
 const Container = styled.div`
   display: flex;
@@ -118,7 +119,7 @@ const ContactButton = styled.input`
 const Sentence = styled.p`
   color: red;
   font-size: 0.9em;
-  margin-top: 5px;
+  /* margin-top: 5px; */
 `;
 
 const Contact = () => {
@@ -130,14 +131,18 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState({});
 
+  // form validate function
   const validateForm = () => {
-    let formErrors = {};
+    const formErrors = {};
 
     if (!contactDetails.name.trim()) {
       formErrors.name = "Name is required.";
     }
+
     if (!contactDetails.email.trim()) {
       formErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(contactDetails.email)) {
+      formErrors.email = "Email formatis invalid";
     }
     if (!contactDetails.subject.trim()) {
       formErrors.subject = "Subject is required.";
@@ -225,7 +230,15 @@ const Contact = () => {
               required={true}
             />
             {errors.name && (
-              <Sentence className="error">{errors.name}</Sentence>
+              <Sentence className="error">
+                <MdOutlineWarningAmber
+                  style={{
+                    fontSize: "1em",
+                    marginRight: "5px",
+                  }}
+                />
+                {errors.name}
+              </Sentence>
             )}
             <ContactInput
               type="email"
@@ -233,10 +246,18 @@ const Contact = () => {
               name="email"
               value={contactDetails.email}
               onChange={handleChange}
-              required
+              // required={true}
             />
             {errors.email && (
-              <Sentence className="error">{errors.email}</Sentence>
+              <Sentence className="error">
+                <MdOutlineWarningAmber
+                  style={{
+                    fontSize: "1em",
+                    marginRight: "5px",
+                  }}
+                />
+                {errors.email}
+              </Sentence>
             )}
             <ContactInput
               type="text"
@@ -244,10 +265,18 @@ const Contact = () => {
               name="subject"
               value={contactDetails.subject}
               onChange={handleChange}
-              required
+              required={true}
             />
             {errors.subject && (
-              <Sentence className="error">{errors.subject}</Sentence>
+              <Sentence className="error">
+                <MdOutlineWarningAmber
+                  style={{
+                    fontSize: "1em",
+                    marginRight: "5px",
+                  }}
+                />
+                {errors.subject}
+              </Sentence>
             )}
             <ContactInputMessage
               type="text"
@@ -256,10 +285,18 @@ const Contact = () => {
               value={contactDetails.message}
               rows={4}
               onChange={handleChange}
-              required
+              required={true}
             />
             {errors.message && (
-              <Sentence className="error">{errors.message}</Sentence>
+              <Sentence className="error">
+                <MdOutlineWarningAmber
+                  style={{
+                    fontSize: "1em",
+                    marginRight: "5px",
+                  }}
+                />
+                {errors.message}
+              </Sentence>
             )}
             <ContactButton onClick={handelSubmit} type="submit" value="Send" />
           </ContactForm>
