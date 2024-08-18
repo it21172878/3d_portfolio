@@ -135,7 +135,7 @@ const SubTitle = styled.div`
 
   @media (max-width: 960px) {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 2px;
   }
 
   @media (max-width: 960px) {
@@ -208,6 +208,7 @@ const ResumeButton = styled.a`
   @media (max-width: 640px) {
     padding: 12px 0;
     font-size: 18px;
+    margin-bottom: 40px;
   }
   color: white;
 `;
@@ -258,8 +259,12 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
-  margin-top: -150px;
-  padding-top: 80px;
+  margin-top: -80px;
+  padding-top: 15px;
+  @media (max-width: 640px) {
+    margin-top: -80px;
+    padding-top: 80px;
+  }
 `;
 
 const Hero = () => {
