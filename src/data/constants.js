@@ -535,7 +535,7 @@ export const projects = [
     description:
       "Can streamline the process of creating applications like your timetable management system, offering administrators and faculty a user-friendly interface to efficiently create, manage, and update schedules.",
     image: project4,
-    tags: ["React Js", "Firebase", "Firestore", "Node JS"],
+    tags: ["React Js", "MongoDb", "Node Js", "Express Js"],
     category: "web app",
     github: "https://sliit360.me",
     live: "https://sliit360.me",

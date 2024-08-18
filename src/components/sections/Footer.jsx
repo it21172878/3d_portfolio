@@ -85,13 +85,13 @@ const Footer = () => {
     <FooterContainer>
       <FooterWrapper>
         <Logo>Dilanka Prasad Liyanagama</Logo>
-        <Nav>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
-        </Nav>
+        {/* <Nav>
+          <NavLink href="/About">About</NavLink>
+          <NavLink href="/Skills">Skills</NavLink>
+          <NavLink href="/Projects">Projects</NavLink>
+          <NavLink href="/Education">Education</NavLink>
+          <NavLink href="/Contact">Contact</NavLink>
+        </Nav> */}
         <SocialMediaIcons>
           <SocialMediaIcon href={Bio.facebook} target="display">
             <FacebookRounded />
@@ -106,7 +106,9 @@ const Footer = () => {
             <Instagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 DPLiyanagama. All rights reserved.</Copyright>
+        <Copyright>
+          &copy;{new Date().getFullYear()} DPLiyanagama. All rights reserved
+        </Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

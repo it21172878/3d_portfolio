@@ -279,11 +279,12 @@ const Contact = () => {
               </Sentence>
             )}
             <ContactInputMessage
-              type="text"
+              type=""
               placeholder="Message"
               name="message"
               value={contactDetails.message}
               rows={4}
+              style={{ resize: "none" }}
               onChange={handleChange}
               required={true}
             />
