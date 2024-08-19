@@ -305,8 +305,8 @@ const Hero = () => {
                 </motion.div>
 
                 <ResumeButton
-                  href="/Resume of Dilanka.pdf"
-                  download="Dilanka's Resume.pdf"
+                  href="/DPLiyanagama_Resume.pdf"
+                  download="Resume_DPLiyanagama.pdf"
                 >
                   Check Resume
                 </ResumeButton>
