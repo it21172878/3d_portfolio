@@ -306,7 +306,7 @@ const Hero = () => {
 
                 <ResumeButton
                   href="/DPLiyanagama_Resume.pdf"
-                  download="Resume_DPLiyanagama.pdf"
+                  download="DPLiyanagama_Resume.pdf"
                 >
                   Check Resume
                 </ResumeButton>
