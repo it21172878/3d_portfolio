@@ -18,6 +18,8 @@ export const Bio = {
   resume:
     "https://drive.google.com/file/d/1txFKZD3LNIXMc329jD9c995AU8LItOXK/view?usp=drive_link",
   linkedin: "https://www.linkedin.com/in/dilanka-liyanagama-a24875200/",
+  youTube:"https://www.youtube.com/@DcoDerHub",
+  facebook:"https://www.facebook.com/dilanka.prasad.92",
   figma:
     "https://www.figma.com/files/user/1193431587774104970?fuid=1193431587774104970",
   // insta: "https://www.instagram.com/rishav_chanda/",
@@ -396,7 +398,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://th.bing.com/th/id/OIP.S0U-Nb3KUP3zMYn_AobgEgHaHa?rs=1&pid=ImgDetMain",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLZgUO-JIXZ5B2xigTlRM30uadW9cQDbHtlR4mE1k162rck-qI9lNQChxj8I8BPBzl5es&usqp=CAU",
     school: "H/Nakulugamuwa Gamini National College",
     date: "Jan 2009 - Aug 2018",
     grade: "Up to A/L",

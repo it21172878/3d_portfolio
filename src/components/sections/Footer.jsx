@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import {
   FacebookRounded,
-  Instagram,
   LinkedIn,
-  Twitter,
+  YouTube,
 } from "@mui/icons-material";
 
 const FooterContainer = styled.div`
@@ -93,17 +92,14 @@ const Footer = () => {
           <NavLink href="/Contact">Contact</NavLink>
         </Nav> */}
         <SocialMediaIcons>
+          <SocialMediaIcon href={Bio.youTube} target="display">
+            <YouTube />
+          </SocialMediaIcon>
           <SocialMediaIcon href={Bio.facebook} target="display">
             <FacebookRounded />
           </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display">
-            <Twitter />
-          </SocialMediaIcon>
           <SocialMediaIcon href={Bio.linkedin} target="display">
             <LinkedIn />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display">
-            <Instagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>

@@ -4,11 +4,11 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/lab": "^5.0.0-alpha.173",
-    "@mui/material": "^5.16.7",
+    "@mui/material": "^5.16.12",
     "@react-three/drei": "^9.109.5",
     "@react-three/fiber": "^8.17.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -55,5 +55,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

@@ -168,6 +168,7 @@ const Contact = () => {
     try {
       e.preventDefault();
 
+      // implement details with Emailjs server. search on google "Emailjs"
       const serviceId = "service_c1xst0m";
       const templateId = "template_lgcr7zh";
       const publicKey = "sMMwuCiYXSc-ixWs9";
