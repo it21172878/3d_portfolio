@@ -18,8 +18,8 @@ export const Bio = {
   resume:
     "https://drive.google.com/file/d/1txFKZD3LNIXMc329jD9c995AU8LItOXK/view?usp=drive_link",
   linkedin: "https://www.linkedin.com/in/dilanka-liyanagama-a24875200/",
-  youTube:"https://www.youtube.com/@DcoDerHub",
-  facebook:"https://www.facebook.com/dilanka.prasad.92",
+  youTube: "https://www.youtube.com/@CodeWithGOONIX",
+  facebook: "https://www.facebook.com/dilanka.prasad.92",
   figma:
     "https://www.figma.com/files/user/1193431587774104970?fuid=1193431587774104970",
   // insta: "https://www.instagram.com/rishav_chanda/",
