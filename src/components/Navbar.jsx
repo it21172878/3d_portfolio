@@ -4,6 +4,7 @@ import styled, { useTheme } from "styled-components";
 import { Bio } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
 import { Link as Scroll } from "react-scroll";
+import logo from "../images/newLogo-01.png";
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -28,10 +29,11 @@ const NavbarContainer = styled.div`
   font-size: 1rem;
 `;
 const NavLogo = styled.div`
-  width: 80%;
+  // width: 80%;
   padding: 0 6px;
+  align-items: start;
   text-decoration: none;
-  color: inherit;
+  cursor: pointer;
 `;
 const NavItems = styled.ul`
   width: 100%;
@@ -40,7 +42,7 @@ const NavItems = styled.ul`
   /* justify-content: center; */
   justify-content: space-between;
   gap: 32px;
-  padding: 0 6px;
+  padding: 0 11%;
   list-style: none;
   @media screen and (max-width: 768px) {
     display: none;
@@ -158,7 +160,12 @@ const Navbar = () => {
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo>DILANKA</NavLogo>
+        {/* <NavLogo>DILANKA</NavLogo> */}
+        <NavLink to="About">
+          <NavLogo>
+            <img src={logo} width="100px" alt="my logo" />
+          </NavLogo>
+        </NavLink>
         <MobileIcon onClick={() => setIsOpen(!isopen)}>
           <MenuRounded style={{ color: "inherit" }} />
         </MobileIcon>
