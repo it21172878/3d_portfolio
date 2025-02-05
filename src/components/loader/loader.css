@@ -64,8 +64,8 @@
 
 .container > .icons path {
   fill: transparent;
-  stroke: #fff;
-  /* stroke-width: 3; */
+  stroke: #854ce6;
+  stroke-width: 15;
   /* stroke-opacity: 1; */
   /* cursor: pointer; */
 }
@@ -98,8 +98,8 @@
   animation: anim-icons1 2s linear forwards;
 } */
 .container .icons path {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 1000;
+  stroke-dasharray: 1700;
+  stroke-dashoffset: 0;
   animation: anim-icons 5s linear forwards;
 }
 
@@ -123,7 +123,7 @@
   }
   90% {
     stroke-dashoffset: 1000;
-    fill: #ffffff;
+    fill: #fff;
   }
 
   100% {

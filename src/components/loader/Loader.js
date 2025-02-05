@@ -67,7 +67,7 @@ const Loader = () => {
       <div class="icons facebook">
         {/* <!-- 0 0 72 72 --> */}
         <svg
-          viewBox="-720 -2000 5000 5000"
+          viewBox="-720 -1300 5000 5000"
           // viewBox="-2 -2 75 75"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
