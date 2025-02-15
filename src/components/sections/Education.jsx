@@ -64,7 +64,7 @@ const Education = () => {
             }}
           >
             My education has been a journey of self-discovery and growth. My
-            educational details are as follows.
+            educational details are as follows
           </Desc>
 
           <VerticalTimeline>

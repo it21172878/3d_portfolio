@@ -7,6 +7,7 @@ import Skills from "./components/sections/Skills";
 import Footer from "./components/sections/Footer";
 import Contact from "./components/sections/Contact";
 import Education from "./components/sections/Education";
+import Certifications from "./components/sections/Certifications";
 import Projects from "./components/sections/Projects";
 import { useEffect, useState } from "react";
 import Loader from "./components/loader/Loader";
@@ -63,7 +64,7 @@ function App() {
             <Hero />
             <Wrapper>
               <Skills />
-              {/* <Experience /> */}
+              <Certifications />
             </Wrapper>
             <Projects />
             <Wrapper>

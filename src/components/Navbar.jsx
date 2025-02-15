@@ -41,8 +41,8 @@ const NavItems = styled.ul`
   align-items: center;
   /* justify-content: center; */
   justify-content: space-between;
-  gap: 32px;
-  padding: 0 11%;
+  gap: 12px;
+  padding: 0 8%;
   list-style: none;
   @media screen and (max-width: 768px) {
     display: none;
@@ -211,6 +211,21 @@ const Navbar = () => {
               Skills
             </ToggleButton>
           </NavLink>
+          <NavLink
+            activeClass="active"
+            to="Certifications"
+            spy={true}
+            // smooth={true}
+            duration={500}
+            onSetActive={handleSetActive}
+          >
+            <ToggleButton
+              active={toggle === "Certifications"}
+              onClick={() => setToggle("Certifications")}
+            >
+              Certifications
+            </ToggleButton>
+          </NavLink>
           {/* <NavLink
             activeClass="active"
             to="Experience"
@@ -281,9 +296,9 @@ const Navbar = () => {
             <NavLink onClick={() => setIsOpen(!isopen)} to="Skills">
               Skills
             </NavLink>
-            {/* <NavLink onClick={() => setIsOpen(!isopen)} to="Experience">
-              Experience
-            </NavLink> */}
+            <NavLink onClick={() => setIsOpen(!isopen)} to="Certification">
+              Certification
+            </NavLink>
             <NavLink onClick={() => setIsOpen(!isopen)} to="Projects">
               Projects
             </NavLink>
@@ -295,6 +310,7 @@ const Navbar = () => {
             </NavLink>
             <GithubButton
               href={Bio.github}
+              rel="noreferrer"
               target="_Blank"
               style={{
                 background: theme.primary,
@@ -306,7 +322,7 @@ const Navbar = () => {
           </MobileMenu>
         )}
         <ButtonContainer>
-          <GithubButton href={Bio.github} target="_">
+          <GithubButton href={Bio.github} rel="noreferrer" target="_">
             Github Profile
           </GithubButton>
         </ButtonContainer>
