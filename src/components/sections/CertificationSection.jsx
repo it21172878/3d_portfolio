@@ -1,10 +1,9 @@
 import React from "react";
-import { VerticalTimeline } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import styled from "styled-components";
-import { education } from "../../data/constants";
-import EducationCard from "../cards/EducationCard";
 import { Element } from "react-scroll";
+import styled from "styled-components";
+import "./CertificationSection.css";
+import { allCertificationImages } from "../../data/constants";
+import img1 from "../../images/certification/containers_v2_certificate.png";
 
 const Container = styled.div`
   display: flex;
@@ -24,13 +23,14 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px;
+  /* max-width: 1100px; */
   gap: 12px;
   scroll-margin-top: 52rem;
   @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
+
 const Title = styled.div`
   font-size: 52px;
   text-align: center;
@@ -52,31 +52,36 @@ const Desc = styled.div`
   }
 `;
 
-const Education = () => {
+const CertificationSection = () => {
   return (
-    <Element name="Education">
-      <Container id="Education">
+    <Element name="Certifications">
+      <Container id="Certifications">
         <Wrapper>
-          <Title>Education</Title>
+          <Title>Certifications</Title>
           <Desc
             style={{
               marginBottom: "40px",
             }}
           >
-            My education has been a journey of self-discovery and growth. My
-            educational details are as follows
+            Here are some of the Courses on which I have followed
           </Desc>
-
-          <VerticalTimeline>
-            {education.map((education, index) => (
-              <EducationCard key={`education-${index}`} education={education} />
-            ))}
-          </VerticalTimeline>
-          {/* <EarthCanvas /> */}
+          <div className="image-slider">
+            <div className="image-slider-track">
+              {allCertificationImages
+                .concat(allCertificationImages)
+                .map((item, index) => {
+                  return (
+                    <div key={index} className="slide">
+                      <img src={item} alt="" />
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
         </Wrapper>
       </Container>
     </Element>
   );
 };
 
-export default Education;
+export default CertificationSection;

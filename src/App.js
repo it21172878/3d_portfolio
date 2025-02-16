@@ -11,6 +11,7 @@ import Certifications from "./components/sections/Certifications";
 import Projects from "./components/sections/Projects";
 import { useEffect, useState } from "react";
 import Loader from "./components/loader/Loader";
+import CertificationSection from "./components/sections/CertificationSection";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -64,7 +65,7 @@ function App() {
             <Hero />
             <Wrapper>
               <Skills />
-              <Certifications />
+              <CertificationSection />
             </Wrapper>
             <Projects />
             <Wrapper>

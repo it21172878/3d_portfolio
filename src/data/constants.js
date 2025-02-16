@@ -5,6 +5,11 @@ import project3 from "../images/projectImg/BilCal.png";
 import project4 from "../images/projectImg/sliit360.png";
 import head1 from "../images/certification/frontendMastersLogo.png";
 import certificate1 from "../images/certification/containers_v2_certificate.png";
+import certi1 from "../images/certification/Introduction_to_MongoDB.png";
+import certi2 from "../images/certification/aws-educate-getting-started-with-storage.png";
+import certi3 from "../images/certification/complete-intro-containers-v2-1.png";
+import certi4 from "../images/certification/typescript-v4-1.png";
+import certi5 from "../images/certification/practical-python-1.png";
 
 export const Bio = {
   name: "Dilanka Liyanagama",
@@ -592,3 +597,12 @@ export const projects = [
 //   { year: 2020, text: "Shared my projects with the world" },
 //   { year: 2021, text: "Started my own platform" },
 // ];
+
+export const allCertificationImages = [
+  certi1,
+  certi2,
+  certi3,
+  certi4,
+  certi5,
+  certi3,
+];
